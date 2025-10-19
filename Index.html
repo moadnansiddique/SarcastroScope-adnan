@@ -1,272 +1,534 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SarcastroScope by MAS – Where the Stars will tell your roasted destiny 💫</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1: #0b0414;
-      --grad1: linear-gradient(135deg,#2b0b3a 0%, #6b2b9b 40%, #ff4fb3 70%, #4fdff0 100%);
-      --glass: rgba(255,255,255,0.04);
-      --accent: #ffd166;
-      --muted: rgba(255,255,255,0.75);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--grad1);color:#fff;-webkit-font-smoothing:antialiased}
-    .wrap{max-width:1080px;margin:28px auto;padding:18px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:64px;height:64px;border-radius:14px;background:linear-gradient(180deg,#fff2 0,#fff0 100%);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-size:20px;color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.35)}
-    h1{margin:0;font-family:'Baloo 2',cursive;font-size:20px}
-    p.lead{margin:6px 0 0;color:var(--muted);max-width:640px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:16px;padding:20px;margin-top:20px;box-shadow:0 10px 40px rgba(0,0,0,0.45);backdrop-filter: blur(6px)}
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start}
-    .hero-left{padding:6px}
-    .inputs{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .field{flex:1;min-width:160px}
-    label{display:block;font-size:12px;color:rgba(255,255,255,0.75);margin-bottom:6px}
-    input[type="text"], input[type="date"]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff;font-size:14px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
-    .btn-primary{background:linear-gradient(90deg,#ff6fb5,#7b4bff);box-shadow:0 8px 22px rgba(0,0,0,0.45);color:#fff}
-    .btn-primary:hover{transform:translateY(-3px)}
-    .glow{animation:wiggle 2s ease-in-out infinite}
-    @keyframes wiggle{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
-    .results{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .result-box{background:var(--glass);padding:14px;border-radius:12px;min-height:140px;position:relative;overflow:hidden}
-    .result-title{font-weight:800;margin:0 0 8px;color:#fff}
-    .typing{font-size:16px;line-height:1.4;min-height:84px}
-    .emoji-burst{position:absolute;right:8px;top:8px;pointer-events:none}
-    .emoji-burst span{display:inline-block;font-size:20px;margin-left:6px;opacity:0;transform:translateY(-6px);animation:burst 900ms ease forwards}
-    .emoji-burst span:nth-child(1){animation-delay:140ms}
-    .emoji-burst span:nth-child(2){animation-delay:320ms}
-    .emoji-burst span:nth-child(3){animation-delay:520ms}
-    @keyframes burst{to{opacity:1;transform:translateY(0);}}
-    .td-section{display:flex;gap:12px;margin-top:18px;align-items:center}
-    .td-section .btn{padding:12px 18px;border-radius:14px}
-    .wheel-area{display:flex;flex-direction:column;align-items:center;gap:12px}
-    .wheel{width:300px;height:300px;border-radius:50%;position:relative;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.5);border:6px solid rgba(255,255,255,0.06);background:radial-gradient(circle at center, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
-    .pointer{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-bottom:24px solid #fff;filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6))}
-    .spin-btn{background:linear-gradient(90deg,#ffd166,#ff6fb5);padding:10px 14px;border-radius:12px;color:#000;font-weight:700}
-    .dare-text{margin-top:12px;font-weight:700;color:#fff}
-    footer{margin-top:26px;text-align:center;color:rgba(255,255,255,0.8)}
-    @media (max-width:920px){.hero{grid-template-columns:1fr}.results{grid-template-columns:1fr}.logo{width:52px;height:52px}}
-    .small{font-size:13px;color:rgba(255,255,255,0.8)}
-    .card.small-card{padding:12px}
-    .result-card{background:rgba(0,0,0,0.2);padding:12px;border-radius:10px;margin-top:12px}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SarcastroScope by MAS – Your Roasted Destiny Awaits 🔮</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0b0414;
+  --grad1:linear-gradient(135deg,#2b0b3a 0%, #6b2b9b 40%, #ff4fb3 70%, #4fdff0 100%);
+  --glass:rgba(255,255,255,0.04);
+  --muted:rgba(255,255,255,0.75);
+  --accent:#ffd166;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--grad1);color:#fff;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:26px auto;padding:18px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:64px;height:64px;border-radius:14px;background:linear-gradient(180deg,#fff2 0,#fff0 100%);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2';font-size:20px;color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.35)}
+h1{margin:0;font-family:'Baloo 2',cursive;font-size:20px}
+p.lead{margin:6px 0 0;color:var(--muted);max-width:640px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:16px;padding:20px;margin-top:20px;box-shadow:0 10px 40px rgba(0,0,0,0.45);backdrop-filter: blur(6px)}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+.inputs{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.field{flex:1;min-width:160px}
+label{display:block;font-size:12px;color:rgba(255,255,255,0.75);margin-bottom:6px}
+input[type="text"], input[type="date"]{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff;font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+.btn-primary{background:linear-gradient(90deg,#ff6fb5,#7b4bff);box-shadow:0 8px 22px rgba(0,0,0,0.45);color:#fff}
+.btn-primary:hover{transform:translateY(-3px)}
+.glow{animation:wiggle 2s ease-in-out infinite}
+@keyframes wiggle{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+.results{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.result-box{background:var(--glass);padding:14px;border-radius:12px;min-height:140px;position:relative;overflow:hidden}
+.result-title{font-weight:800;margin:0 0 8px;color:#fff;text-align:center}
+.typing{font-size:16px;line-height:1.4;min-height:84px}
+.emoji-burst{position:absolute;right:8px;top:8px;pointer-events:none}
+.emoji-burst span{display:inline-block;font-size:20px;margin-left:6px;opacity:0;transform:translateY(-6px);animation:burst 900ms ease forwards}
+.emoji-burst span:nth-child(1){animation-delay:140ms}
+.emoji-burst span:nth-child(2){animation-delay:320ms}
+.emoji-burst span:nth-child(3){animation-delay:520ms}
+@keyframes burst{to{opacity:1;transform:translateY(0);}}
+.td-section{display:flex;gap:12px;margin-top:18px;align-items:center}
+.td-section .btn{padding:12px 18px;border-radius:14px}
+.wheel-area{display:flex;flex-direction:column;align-items:center;gap:12px}
+.wheel{width:320px;height:320px;border-radius:50%;position:relative;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.5);border:6px solid rgba(255,255,255,0.06);background:radial-gradient(circle at center, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+.pointer{position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:26px solid #fff;filter:drop-shadow(0 6px 10px rgba(0,0,0,0.6))}
+.spin-btn{background:linear-gradient(90deg,#ffd166,#ff6fb5);padding:10px 14px;border-radius:12px;color:#000;font-weight:700;border:none;cursor:pointer}
+.dare-text{margin-top:12px;font-weight:700;color:#fff;text-align:center}
+.footer{margin-top:26px;text-align:center;color:rgba(255,255,255,0.8)}
+.small{font-size:13px;color:rgba(255,255,255,0.8)}
+.result-card{background:rgba(0,0,0,0.2);padding:12px;border-radius:10px;margin-top:12px}
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr}
+  .results{grid-template-columns:1fr}
+  .wheel{width:260px;height:260px}
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">MAS</div>
-        <div>
-          <h1>SarcastroScope by MAS – Where the Stars Roast You in Two Languages 💫</h1>
-          <p class="lead">Enter your name and date of birth, and let MAS and the stars roast you — in English and Hindi!</p>
-        </div>
-      </div>
-      <div>
-        <button id="langToggle" class="btn btn-primary">Switch to हिंदी 🔁</button>
-      </div>
-    </header>
-
-    <main class="card">
-      <section class="hero">
-        <div class="hero-left">
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="font-size:42px;font-family:'Baloo 2'">✨</div>
-            <div>
-              <div style="font-weight:800;font-size:18px">Welcome to SarcastroScope by MAS – The Universe Has Opinions About You 😏</div>
-              <div class="small" style="margin-top:6px">Type your full name and pick your birth date. The stars (and MAS) will do the rest.</div>
-            </div>
-          </div>
-
-          <div class="inputs">
-            <div class="field">
-              <label for="fullName">Full Name</label>
-              <input id="fullName" type="text" placeholder="e.g. Ananya Sharma" />
-            </div>
-            <div class="field">
-              <label for="dob">Date of Birth</label>
-              <input id="dob" type="date" />
-            </div>
-            <div style="min-width:180px;display:flex;align-items:end">
-              <button id="revealBtn" class="btn btn-primary glow">Reveal My Fate 🔮</button>
-            </div>
-          </div>
-
-          <div class="results" style="margin-top:14px">
-            <div class="result-box" id="englishBox">
-              <div class="result-title">Your roasted Destiny🔮</div>
-              <div class="typing" id="englishText"></div>
-              <div class="emoji-burst" id="englishBurst"></div>
-            </div>
-            <div class="result-box" id="hindiBox">
-              <div class="result-title">your roasted Destiny🔮</div>
-              <div class="typing" id="hindiText"></div>
-              <div class="emoji-burst" id="hindiBurst"></div>
-            </div>
-          </div>
-
-          <div class="td-section">
-            <div id="tdPrompt" style="flex:1;color:var(--muted)"></div>
-            <div>
-              <button id="truthBtn" class="btn">Truth 💬</button>
-              <button id="dareBtn" class="btn">Dare 🎯</button>
-            </div>
-          </div>
-
-          <div id="truthBox" class="result-card" style="display:none;font-weight:600"></div>
-        </div>
-
-        <aside class="card wheel-area">
-          <div style="font-weight:800">Spin the MAS Wheel of Dares 🌀</div>
-          <div style="position:relative">
-            <div class="pointer" aria-hidden="true"></div>
-            <canvas id="wheel" class="wheel" width="560" height="560" style="width:280px;height:280px"></canvas>
-          </div>
-          <button id="spinBtn" class="spin-btn">Spin</button>
-          <div class="dare-text" id="wheelResult"></div>
-        </aside>
-      </section>
-
-      <footer>
-        Created with sarcasm by MAS – Because astrology needed a sense of Humor 😂
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // ---------- CONTENT ARRAYS ----------
-    const englishRoasts = [
-      "The universe whispers: 'Big things are coming.' But don’t worry — they’ll probably get stuck in traffic like you.",
-      "Today, your motivation will wake up… take one look at your to-do list… and go back to sleep.",
-      "Destiny says you’re on the right path — it’s just that you’re walking very, very slowly.",
-      "The stars predict productivity… right after your fifth 'just five more minutes' nap.",
-      "A mysterious opportunity will appear today — you’ll ignore it because you’re busy rewatching your comfort show.",
-      "The cosmos has aligned perfectly… for you to make one small mistake and overthink it for 3 days.",
-      "Your aura shines bright today — mostly from your phone screen at 2 AM.",
-      "The stars say, 'You got this.' But even they added a little 'hopefully' at the end.",
-      "Today feels magical… until you remember you still have to do laundry.",
-      "A great idea will strike you today — too bad it’ll be in the shower with zero chance of remembering it.",
-      "Fate is smiling on you. Unfortunately, it’s that sarcastic smile your mom gives when she knows you messed up.",
-      "Your cosmic energy is powerful today. Use it wisely — maybe finally reply to those 47 unread messages.",
-      "The stars are sending you signs… but you’re too busy scrolling memes to notice.",
-      "You will have a strong desire to change your life today. It will pass after lunch.",
-      "The planets predict peace and clarity… right after you finish arguing with yourself in your head.",
-      "The stars foresee a bright future — if you can just get out of bed before noon.",
-      "Today’s energy brings new beginnings… or maybe just another 'new tab' in your browser.",
-      "A powerful connection is coming your way — probably with your food delivery driver.",
-      "Cosmic forces say you’re destined for greatness. Just… not today.",
-      "The universe has big plans for you — but it’s waiting for you to stop hitting snooze first."
-    ];
-
-    const hindiRoasts = [
-      "Aaj ke grahon ki position dekh ke lagta hai, tu productivity ke chakkar mein apni neend ka balance khatam karne waala hai. Matlab plan banega, kaam nahi.",
-      "Taare keh rahe hain, aaj tu motivation dhoondhne niklega, par Netflix ne pehle hi tujhe capture kar liya hai. Bhagwan bhi bole — 'Leave request approve kar di.'",
-      "Aaj tere aura mein confusion ka full glow hai. Tu khud nahi jaanta tu kya chahta hai — par status laga dega: 'Only real ones will understand.' Bro, koi bhi nahi samjha.",
-      "Tere chart mein likha hai: 'Aaj tu overthink karega, fir khud se ladke, khud hi haar ke, khud ko chai pilayega.' Basically, tu ek-person soap opera hai.",
-      "Universe ne aaj special discount diya hai: free embarrassment at unexpected moments. Ha, woh bhi public mein.",
-      "Aaj tere stars bol rahe hain: 'Tu confident lagega, par spelling galat likh dega.' Ego high, autocorrect higher.",
-      "Aaj tu positive vibes feel karega… par woh vibes battery ke jaise 5 minute mein discharge ho jayengi.",
-      "Aaj ke din tera ‘main kal se start karunga’ dialogue officially senior citizen ban gaya hai. Horoscope bhi bol raha hai: 'Bhai ab toh kar le.'",
-      "Plan banega, mood kharab hoga, plan cancel hoga, aur tu bolega: 'Destiny doesn’t want this.' Destiny nahi chaahti, tu hi nahi chaahta, sach bol.",
-      "Aaj tere surroundings mein romantic energy hai… par tujhe message bhi nahi aaya. Stars ne likha hai — 'Bro, network problem nahi, tera luck hi weak hai.'",
-      "Taare keh rahe hain, aaj tu apni life ke liye ek bada step lega — bed se uthne ka. Small victories count too, hero.",
-      "Aaj tera future bright hai, bas tu sunglasses utaar le toh dikhe.",
-      "Aaj universe keh raha hai — kuch bada hoga… par tujhe toh chhota kaam bhi procrastinate karne mein maza aata hai.",
-      "Aaj tera mood itna unpredictable hai, weather app bhi bol raha hai — 'Bro, tu hi bata.'",
-      "Tere stars dekh ke lagta hai, tu har cheez mein expert hai… bas apni life chhod ke.",
-      "Aaj ke din tera 'I’ll start tomorrow' officially national holiday ban gaya hai.",
-      "Plan bana, execution gaya, excuse aaya — aur cycle repeat ho gayi. Universe bhi bolta hai 'Bhai, season 4 kab khatam karega?'",
-      "Aaj tera energy level coffee se zyada, motivation se kam rahega.",
-      "Stars keh rahe hain, tujhe peace chahiye — par tu khud hi drama ka head office hai.",
-      "Aaj tu productive feel karega, bas wahi feel karte rehna. Kaam mat karna, tradition tod mat.",
-      "Aaj kuch naya seekhne ka mauka milega — jaise reminder snooze karne ke naye tareeke.",
-      "Universe ne tujhe aaj 'main theek hoon' kehne ka award diya hai — acting skills top level.",
-      "Aaj tu confident lagega, par camera khulte hi tera self-esteem background music ban jaayega.",
-      "Taare bolte hain, tu logon ko impress karne chala tha… par khud ka Wi-Fi hi chala gaya.",
-      "Aaj tujhe life mein clarity mil sakti thi, par tu meme scroll kar raha tha. So… next janam maybe.",
-      "Aaj kuch accha hone wala tha, par tu late uth gaya.",
-      "Stars keh rahe hain, tu ek inspirational quote post karega… aur phir wahi quote tod dega.",
-      "Aaj tera luck itna slow hai, loading bar bhi irritate ho gaya.",
-      "Universe ne tujhe bola, 'Be yourself' — tu bola, 'Error 404: Self not found.'",
-      "Aaj tera charm high hai, par log fir bhi 'seen' pe chhod denge.",
-      "Taare keh rahe hain, aaj tu kuch productive karega… par sab imagination mein hi hoga.",
-      "Aaj tere vibes strong hain — par Wi-Fi weak hai, toh universe bhi message deliver nahi kar pa raha."
-    ];
-
-    // TRUTHS: original English 20 + new ones (merged)
-    const truths = [
-      "What’s the weirdest thing you’ve done when you were alone and thought no one was watching? 👀",
-      "Have you ever caught feelings for someone you absolutely shouldn’t have? (Like… very shouldn’t.)",
-      "What’s one thing you’ve done in love that you’d never admit publicly? 😏",
-      "Who’s the last person who made your heart go 'uff' — and did they ever know?",
-      "If your ex texts you right now 'I miss you' — honest answer, kya reply karega?",
-      "Ever flirted with two people at the same time? (And got caught? 👀)",
-      "What’s your biggest 'I can’t believe I did that' moment in a relationship?",
-      "What’s one fantasy you’ve never told anyone about? (Yes, that one 👀)",
-      "Who’s that one person you wish had chosen you — but didn’t?",
-      "Have you ever said 'I love you' and didn’t mean it? Or didn’t say it when you should have?",
-      "What’s your toxic trait in relationships or friendships — and don’t say 'I care too much.' 😏",
-      "If someone could read your thoughts for one day, what’s the first thing you’d do? (Or delete?)",
-      "Have you ever compared your current crush or partner with your ex? (Dangerous territory 😬)",
-      "What’s your biggest turn-on that no one would guess about you? 😉",
-      "Have you ever been jealous of your friend’s relationship or attention?",
-      "Who’s the one person you’d never admit you found attractive? (But you totally did.)",
-      "What’s the most emotionally intense thing you’ve ever experienced — and still remember?",
-      "Have you ever broken someone’s heart — and felt absolutely nothing? 😈",
-      "If you could go back and fix one thing in your love life, what would it be?",
-      "What’s one truth about yourself you hide behind jokes or sarcasm? 💭",
-      "Who’s that one person you pretend you don’t care about… but secretly still stalk? 👀",
-      "Kabhi kisi ko impress karne ke chakkar mein ulti harkat ki hai? Batao, fail kitne hue? 😂",
-      "If your Google search history was leaked, kitne log tumse door bhaag jaate?",
-      "Ever stalked someone so much that Instagram said, ‘Bro, bas kar ab’? 😏",
-      "Kis teacher ko dekh ke bola tha, 'Aaj attendance lene ka mann kar raha hai'?",
-      "If you could delete one embarrassing memory from your life, kaunsi hoti wo?",
-      "Kabhi apne dost ke ex ko secretly stalk kiya hai? Be honest 👀",
-      "What’s the lamest excuse you’ve ever given for not submitting an assignment or coming late?",
-      "Tumhare phone mein 'Don’t open' naam ka folder hai kya? (Aur usme kya hai 🤨)",
-      "Have you ever pretended to be busy just to avoid meeting someone? (Spoiler: hum sab guilty hain 😆)",
-      "Kabhi apne crush ko impress karne ke chakkar mein khud hi embarrassed ho gaye ho? Kya scene tha?",
-      "Who’s that one person you secretly wish would text you right now? 😏",
-      "Ever said 'I’m fine' jab clearly tum fine nahi the? (Aur fir meme post kiya 'mood')",
-      "What’s the stupidest thing you’ve cried over? Be honest — hum judge nahi karenge… much. 😆",
-      "If your life were a movie, what would its title be? (Be creative, Netflix might call 😜)",
-      "Who’s the last person you checked out on social media — and don’t lie, we’ll know.",
-      "Have you ever sent a risky text and instantly regretted it? (Aur delete bhi nahi kar paaye 😬)",
-      "What’s one lie you always tell your parents? (Hum sab ke paas ek toh hota hi hai 😏)",
-      "If your crush walked in right now, what’s the first thing you’d say… or forget to say? 😳",
-      "Kabhi aisa feel hua ke life ek serial hai aur tum uske side character ho? 😭"
-    ];
-
-    // DARES: combined new + earlier
-    const dares = [
-      "Go to your crush and say, 'Mujhe laga tum sirf WhatsApp DP mein ache lagte ho… par real life mein toh limited edition nikle.'",
-      "Speak in a dramatic Bollywood villain voice for the next 5 minutes. ('Tumhe lagta hai ye dare easy hai? Galat soch rahe ho, mere dost!')",
-      "Post a story saying 'Feeling emotional 💔' and then reply 'LOL jk' to anyone who asks what happened.",
-      "Go to a random person and say, 'Bhai, tujhe yaad nahi? Hum tuition mein milte the!' — and act offended when they say no.",
-      "Speak only in movie dialogues for 10 minutes. Example: 'Maa kehti thi beta padhai kar, lekin destiny ne kaha meme bana.'",
-      "Send 'I have something to tell you…' to your best friend and then just send 'I ate your chips.'",
-      "Go to the mirror and give yourself a 1-minute acceptance speech like you just won an Oscar.",
-      "Use pickup lines on your teacher (politely!) like — 'Sir/Ma’am, you must be gravity… because you keep pulling my grades down.'",
-      "Eat one bite of food dramatically like you’re in a daily soap — full music, slow motion, expressions and all.",
-      "Compliment every person you meet for the next 10 minutes… but in weird ways. Example: 'Wow, you breathe so confidently!'",
-      "Call your mom and say 'Mumma, main serious baat karni thi…' then whisper, 'Pizza kha lo, stress kam hota hai.'",
-      "Speak only in rhymes for 5 minutes. ('Main hu best, tu hai guest, mujhe chai chahiye rest rest rest!')",
-      "Make a fake emotional speech about your lost pen as if it was your first love.",
-      "Propose a random object in the room and convince everyone it’s 'the one.'",
-      "Talk to your bottle like it’s your best friend who betrayed you. ('Tu bhi plastic nikla, doston jaisa.')",
-      "Stand up and say, 'Main aaj sabke samne ek baat kehna chahta hoon… mujhe paratha zyada pasand hai pizza se.'",
-      "Text your group, 'Guys, I did something crazy,' and then send a pic of you drinking water dramatically.",
-      "Take a slow-motion walk across the room while humming a sad song.",
-      "Ask someone, 'If I were a vegetable, what would I be?' and argue over their answer seriously.",
-      "Say 'Main serious hoon' after every sentence for 2 minutes — no matter what you’re talking about.",
-      "Send a random emoji to your crush and say 'This is my mood because of you.'",
-      "Post a selfie captioned 'The stars roasted me. Thanks, MAS.'",
-      "Record a voice note saying 'Main ek khaas insan hoon… apne liye.'",
-      "Change your group chat name to 'MAS’s Star Child 🌟' for 24 hours.",
-      "Speak like a Shakespearean noble for 30 seconds.",
-      "Text your best friend: 'Bro, 
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">MAS</div>
+        <div>
+          <h1>SarcastroScope by MAS – Your Roasted Destiny Awaits 🔮</h1>
+          <p class="lead">Enter your name and date of birth, and let MAS and the stars roast you — in English and Hindi!</p>
+        </div>
+      </div>
+    </header>
+    <main class="card">
+      <section class="hero">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="font-size:42px;font-family:'Baloo 2'">✨</div>
+            <div>
+              <div style="font-weight:800;font-size:18px">Welcome to SarcastroScope by MAS – The Universe Has Opinions About You 😏</div>
+              <div class="small" style="margin-top:6px">Type your full name and pick your birth date. The stars (and MAS) will do the rest.</div>
+            </div>
+          </div>
+          <div class="inputs" style="margin-top:12px">
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" type="text" placeholder="e.g. Ananya Sharma" />
+            </div>
+            <div class="field">
+              <label for="dob">Date of Birth</label>
+              <input id="dob" type="date" />
+            </div>
+            <div style="min-width:180px;display:flex;align-items:end">
+              <button id="revealBtn" class="btn btn-primary glow">Reveal My Fate 🔮</button>
+            </div>
+          </div>
+          <div class="results" style="margin-top:14px">
+            <div class="result-box" id="englishBox">
+              <div class="result-title">Your Roasted Destiny 🔮</div>
+              <div class="typing" id="englishText"></div>
+              <div class="emoji-burst" id="englishBurst"></div>
+            </div>
+            <div class="result-box" id="hindiBox">
+              <div class="result-title">Your Roasted Destiny 🔮</div>
+              <div class="typing" id="hindiText"></div>
+              <div class="emoji-burst" id="hindiBurst"></div>
+            </div>
+          </div>
+          <div class="td-section">
+            <div id="tdPrompt" style="flex:1;color:var(--muted)"></div>
+            <div>
+              <button id="truthBtn" class="btn">Truth 💬</button>
+              <button id="dareBtn" class="btn">Dare 🎯</button>
+            </div>
+          </div>
+          <div id="truthBox" class="result-card" style="display:none;font-weight:600"></div>
+        </div>
+        <aside class="card wheel-area">
+          <div style="font-weight:800">Spin the MAS Wheel of Dares 🌀</div>
+          <div style="position:relative">
+            <div class="pointer" aria-hidden="true"></div>
+            <canvas id="wheel" class="wheel" width="640" height="640" style="width:320px;height:320px"></canvas>
+          </div>
+          <button id="spinBtn" class="spin-btn">Spin</button>
+          <div class="dare-text" id="wheelResult"></div>
+        </aside>
+      </section>
+      <footer class="footer">
+        Created with sarcasm by MAS – Because astrology needed a sense of humor 😂
+      </footer>
+    </main>
+  </div>
+<script>
+/* ------------------- Full Data (all old + new) ------------------- */
+/* ENGLISH ROASTS (~45) */
+const englishRoasts = [
+"The universe whispers: 'Big things are coming.' But don’t worry — they’ll probably get stuck in traffic like you.",
+"Today, your motivation will wake up… take one look at your to-do list… and go back to sleep.",
+"Destiny says you’re on the right path — it’s just that you’re walking very, very slowly.",
+"The stars predict productivity… right after your fifth 'just five more minutes' nap.",
+"A mysterious opportunity will appear today — you’ll ignore it because you’re busy rewatching your comfort show.",
+"The cosmos has aligned perfectly… for you to make one small mistake and overthink it for 3 days.",
+"Your aura shines bright today — mostly from your phone screen at 2 AM.",
+"The stars say, 'You got this.' But even they added a little 'hopefully' at the end.",
+"Today feels magical… until you remember you still have to do laundry.",
+"A great idea will strike you today — too bad it’ll be in the shower with zero chance of remembering it.",
+"Fate is smiling on you. Unfortunately, it’s that sarcastic smile your mom gives when she knows you messed up.",
+"Your cosmic energy is powerful today. Use it wisely — maybe finally reply to those 47 unread messages.",
+"The stars are sending you signs… but you’re too busy scrolling memes to notice.",
+"You will have a strong desire to change your life today. It will pass after lunch.",
+"The planets predict peace and clarity… right after you finish arguing with yourself in your head.",
+"The stars foresee a bright future — if you can just get out of bed before noon.",
+"Today’s energy brings new beginnings… or maybe just another 'new tab' in your browser.",
+"A powerful connection is coming your way — probably with your food delivery driver.",
+"Cosmic forces say you’re destined for greatness. Just… not today.",
+"The universe has big plans for you — but it’s waiting for you to stop hitting snooze first.",
+"The stars say your Wi-Fi signal reflects your life: strong intentions, weak connection.",
+"Your destiny’s buffering... cosmic network issues again.",
+"The universe applied 'do not disturb' to your ambitions.",
+"Today you’ll feel like the main character—but it’s a background episode.",
+"Your fate emailed you. It went to spam.",
+"You were born under 'Procrastination Rising'—legendary placement.",
+"Cosmos whispers: meditate. You open memes instead.",
+"You have magnetism... for awkward situations.",
+"Stars predict success—if your phone battery survives.",
+"Your aura’s pink today: cute chaos detected.",
+"Universe: 'Be confident.' You: *googles how to be confident*.",
+"Celestial forecast: 90% drama, 10% productivity.",
+"Your guardian planet took a lunch break again.",
+"Fate’s proud of you—for waking up eventually.",
+"Stars say you’ll meet your soulmate… in another timeline.",
+"You radiate main-character energy with side-character effort.",
+"Planet Venus just rolled its eyes at your texting game.",
+"Mars reports you’ll argue with the mirror and lose.",
+"Your destiny sparkles—but mostly from oily skin.",
+"The moon says: cry dramatically, then snack it off.",
+"Your vibe: half genius, half loading screen.",
+"Today’s alignment: Sun in Leo, you in bed.",
+"Stars scream: 'Do something!' You reply: 'Nah.'",
+"Your luck’s hiding—try rebooting your karma.",
+"Destiny unfriended you but still stalks your stories."
+];
+/* HINDI (HINGLISH) ROASTS (~45) */
+const hindiRoasts = [
+"{name}, tumhara janm Bakchodi Nakshatra mein hua tha — planets bhi confuse ho gaye.",
+"Aaj ke grah bol rahe hain: tu productivity ka idea lekar aaya tha, par nap leke chala gaya.",
+"Taare keh rahe hain, tu motivation dhoondhne gaya tha, par Netflix mil gaya.",
+"Shani Dev ne bola: 'isko toh bonus embarrassment do.'",
+"Aaj tera aura shiny hai — oil se.",
+"Rahu bolta hai: 'isko thoda drama aur do.'",
+"Tera luck aaj bhi loading pe hai, jaise tera network.",
+"Tere janm kundali mein likha hai: 'expert in excuses'.",
+"Aaj ka din special hai — tu fir bhi late uth gaya.",
+"Tere stars chill mode mein hain — jaise tu khud.",
+"Universe ne tujhe bola 'kaam kar', tu bola 'abhi mood nahi'.",
+"Aaj tera karma vacation pe gaya hai.",
+"Shukra Dev ne bola: 'ye banda toh meme material hai.'",
+"Aaj tu confident lagega — par sirf filter ke sath.",
+"Tumhara rashi: drama aur overthinking ka milan.",
+"Guru ne bola: 'isko wisdom do' — network error.",
+"Aaj tere vibes mast hain, bas Wi-Fi weak hai.",
+"Yamraj bhi bole: 'isko lene jaana risky hai, self-destruction mode on hai.'",
+"Stars bol rahe hain, tu apne hi plan se cheat karega.",
+"Aaj tu productive feel karega… par feel hi rahega.",
+"Tu ek hi time pe charming aur embarrassing ka combo hai.",
+"Aaj tera horoscope likhne waale ne bola: 'skip kar yaar, ye case alag hai.'",
+"Tere planets gossip kar rahe hain: 'isko seekhne ka koi chance hai?'",
+"Aaj ka din tujhe roast karne ke liye hi bana hai.",
+"Tere grah bolte hain: 'isko motivation bhejna waste hai.'",
+"Aaj tu sochta rahega, universe haste rahega.",
+"Aaj tera mood unpredictable hai — tu khud shock ho jaayega.",
+"Tere stars bhi thak gaye hain, ab tu khudko sambhal le.",
+"Rahu ne bola: 'isko logic dena risky hai.'",
+"Tu horoscope padhkar bhi confuse hi rahega.",
+"Aaj ka din tere memes ke naam likha gaya hai.",
+"Shani Dev ka message aaya: 'karma busy hai, baad mein aana.'",
+"Aaj tu confident lagega, par autocorrect tujhe expose karega.",
+"Universe keh raha hai: tu ek emotional damage ka live example hai.",
+"Tu ek-person serial hai — har episode mein overthinking.",
+"Aaj tera confidence login nahi ho paaya.",
+"Tere grah chill pe hain — ab tu bhi kar le, kuch hone nahi wala.",
+"Aaj tu productive feel karega, par Netflix active rahega.",
+"Universe ne bola: tu try karega, par result memes banenge.",
+"Tare keh rahe hain, tu ek walking comedy hai.",
+"Shukra Dev ne bola: 'isko pyaar nahi, sarcasm chahiye.'",
+"Tu sochta hai tu deep hai, par universe ke liye tu shallow meme hai.",
+"Aaj ke din ka motto: 'Thoda aur chill kar, zindagi toh wahi rahegi.'"
+];
+/* TRUTHS (all combined, ~40) */
+const truths = [
+"What’s the weirdest thing you’ve done when you were alone and thought no one was watching? 👀",
+"Who’s that one person you secretly still stalk?",
+"Ever pretended to be busy to avoid someone?",
+"Have you ever lied to your parents this week?",
+"What’s your most embarrassing crush story?",
+"If your search history leaked, what would you delete first?",
+"Who’s the last person you texted 'accidentally on purpose'?",
+"Have you ever sent a risky text and regretted it?",
+"What truth about you hides behind your jokes?",
+"What’s your biggest 'I can’t believe I did that' moment in a relationship?",
+"Have you ever flirted with two people at the same time?",
+"If your ex texts you right now 'I miss you', what would you reply?",
+"What’s one fantasy you’ve never told anyone about?",
+"Who’s that one person you wish had chosen you — but didn’t?",
+"What’s one lie you always tell your parents?",
+"Ever stalked your friend’s ex? Be honest 👀",
+"If someone could read your thoughts for one day, what would you hide first?",
+"Have you ever broken someone’s heart — and felt absolutely nothing? 😈",
+"If you could go back and fix one thing in your life, what would it be?",
+"Have you ever said 'I’m fine' when clearly you weren’t?",
+"What’s the stupidest thing you’ve cried over?",
+"Who’s the last person you checked out on social media?",
+"What’s one secret you’ll never tell your crush?",
+"Have you ever lied just to sound cool?",
+"Kabhi kisi ko impress karne ke chakkar mein ulti harkat ki? Batao, fail kitne hue? 😂",
+"If your Google search history was leaked, kitne log tumse door bhaag jaate?",
+"Ever stalked someone so much that Instagram said, 'Bro, bas kar ab'? 😏",
+"Kis teacher ko dekh ke bola tha, 'Aaj attendance lene ka mann kar raha hai'?",
+"If you could delete one embarrassing memory from your life, kaunsi hoti wo?",
+"Kabhi apne dost ke ex ko secretly stalk kiya hai? Be honest 👀",
+"What’s the lamest excuse you’ve ever given for not submitting an assignment or coming late?",
+"Tumhare phone mein 'Don’t open' naam ka folder hai kya? (Aur usme kya hai 🤨)",
+"Have you ever pretended to be busy just to avoid meeting someone? (Spoiler: hum sab guilty hain 😆)",
+"Kabhi apne crush ko impress karne ke chakkar mein khud hi embarrassed ho gaye ho? Kya scene tha?",
+"Who’s that one person you secretly wish would text you right now? 😏",
+"Ever said 'I’m fine' jab clearly tum fine nahi the? (Aur fir meme post kiya 'mood')",
+"What’s the stupidest thing you’ve cried over? Be honest — hum judge nahi karenge… much. 😆",
+"If your life were a movie, what would its title be? (Be creative, Netflix might call 😜)",
+"Who’s the last person you checked out on social media — and don’t lie, we’ll know."
+];
+/* DARES (all combined, ~40) */
+const dares = [
+"Go to your crush and say, 'Mujhe laga tum sirf WhatsApp DP mein ache lagte ho… par real life mein toh limited edition nikle.'",
+"Speak in a dramatic Bollywood villain voice for the next 5 minutes. ('Tumhe lagta hai ye dare easy hai? Galat soch rahe ho, mere dost!')",
+"Post a story saying 'Feeling emotional 💔' and then reply 'LOL jk' to anyone who asks what happened.",
+"Go to a random person and say, 'Bhai, tujhe yaad nahi? Hum tuition mein milte the!' — and act offended when they say no.",
+"Speak only in movie dialogues for 10 minutes. Example: 'Maa kehti thi beta padhai kar, lekin destiny ne kaha meme bana.'",
+"Send 'I have something to tell you…' to your best friend and then just send 'I ate your chips.'",
+"Go to the mirror and give yourself a 1-minute acceptance speech like you just won an Oscar.",
+"Use pickup lines on your teacher (politely!) like — 'Sir/Ma’am, you must be gravity… because you keep pulling my grades down.'",
+"Eat one bite of food dramatically like you’re in a daily soap — full music, slow motion, expressions and all.",
+"Compliment every person you meet for the next 10 minutes… but in weird ways. Example: 'Wow, you breathe so confidently!'",
+"Call your mom and say 'Mumma, main serious baat karni thi…' then whisper, 'Pizza kha lo, stress kam hota hai.'",
+"Speak only in rhymes for 5 minutes. ('Main hu best, tu hai guest, mujhe chai chahiye rest rest rest!')",
+"Make a fake emotional speech about your lost pen as if it was your first love.",
+"Propose a random object in the room and convince everyone it’s 'the one.'",
+"Talk to your bottle like it’s your best friend who betrayed you. ('Tu bhi plastic nikla, doston jaisa.')",
+"Stand up and say, 'Main aaj sabke samne ek baat kehna chahta hoon… mujhe paratha zyada pasand hai pizza se.'",
+"Text your group, 'Guys, I did something crazy,' and then send a pic of you drinking water dramatically.",
+"Take a slow-motion walk across the room while humming a sad song.",
+"Ask someone, 'If I were a vegetable, what would I be?' and argue over their answer seriously.",
+"Say 'Main serious hoon' after every sentence for 2 minutes — no matter what you’re talking about.",
+"Send a random emoji to your crush and say 'This is my mood because of you.'",
+"Post a selfie captioned 'The stars roasted me. Thanks, MAS.'",
+"Record a voice note saying 'Main ek khaas insan hoon… apne liye.'",
+"Change your group chat name to 'MAS’s Star Child 🌟' for 24 hours.",
+"Speak like a Shakespearean noble for 30 seconds.",
+"Text your best friend: 'Bro, I think I’m turning into a potato.'",
+"Post a 10-second video of you dancing without music.",
+"Yell 'I’m fabulous!' out your window.",
+"Pretend to be a motivational speaker for 30 seconds.",
+"Send your crush a selfie making your best duck face.",
+"Do a dramatic Bollywood pose and post it.",
+"Send 'I have something to tell you...' to your crush and then send 'Just kidding, I ate your chips.'",
+"Change your WhatsApp status to 'Star Child by MAS' for a day.",
+"Compose and sing a 10-second jingle about your favorite snack.",
+"Go live and announce: 'I’m single, available, and emotionally efficient.'",
+"Make a 15-second slow-motion video of you opening a fridge and stare like it betrayed you.",
+"Call someone and dramatically complain about fake relationships — then say you were talking about your phone charger.",
+"Write a 1-line breakup letter to your bed and post it in your story.",
+"Ask your group chat to vote on your 'best trait' and then accept the most ridiculous answer seriously.",
+"Stand in a public place and loudly say, 'I am confident and slightly confused.'",
+"Create a fake award for 'Best Snack Eater' and present it to an inanimate object on video."
+];
+/* ------------------- Non-repeating pickers ------------------- */
+function createNonRepeatingPicker(arr){
+  const pool = arr.slice();
+  let used = [];
+  return function pick(){
+    if(used.length >= pool.length){
+      used = [];
+    }
+    // choose random index not in used
+    let idx;
+    do {
+      idx = Math.floor(Math.random() * pool.length);
+    } while(used.includes(idx) && used.length < pool.length);
+    used.push(idx);
+    return pool[idx];
+  };
+}
+/* Create pickers */
+const pickEnglishRoast = createNonRepeatingPicker(englishRoasts);
+const pickHindiRoast = createNonRepeatingPicker(hindiRoasts);
+const pickTruth = createNonRepeatingPicker(truths);
+const pickDare = createNonRepeatingPicker(dares);
+/* Wheel uses same dare pool but needs its own non-repeating */
+const pickWheelDare = createNonRepeatingPicker(dares);
+/* Typing effect */
+function typeText(el, text, speed=16){
+  el.innerHTML = '';
+  return new Promise(res=>{
+    let i=0;
+    function step(){
+      if(i<=text.length){
+        el.innerHTML = text.slice(0,i) + (i%2?'<span style="opacity:.5">▌</span>':'');
+        i++;
+        setTimeout(step, speed);
+      } else { el.innerHTML = text; res(); }
+    }
+    step();
+  });
+}
+/* Emoji burst */
+function showBurst(container, emojis){
+  container.innerHTML = emojis.map(e=>`<span>${e}</span>`).join('');
+  setTimeout(()=>container.innerHTML = '', 1200);
+}
+/* ------------------- DOM Elements ------------------- */
+const fullName = document.getElementById('fullName');
+const dob = document.getElementById('dob');
+const revealBtn = document.getElementById('revealBtn');
+const englishText = document.getElementById('englishText');
+const hindiText = document.getElementById('hindiText');
+const englishBurst = document.getElementById('englishBurst');
+const hindiBurst = document.getElementById('hindiBurst');
+const tdPrompt = document.getElementById('tdPrompt');
+const truthBtn = document.getElementById('truthBtn');
+const dareBtn = document.getElementById('dareBtn');
+const truthBox = document.getElementById('truthBox');
+const wheelCanvas = document.getElementById('wheel');
+const ctx = wheelCanvas.getContext('2d');
+const spinBtn = document.getElementById('spinBtn');
+const wheelResult = document.getElementById('wheelResult');
+/* set default DOB (optional) */
+(function initDOB(){
+  const d=new Date(); d.setFullYear(d.getFullYear()-22);
+  dob.value = d.toISOString().slice(0,10);
+})();
+/* Reveal logic */
+revealBtn.addEventListener('click', async ()=>{
+  const name = (fullName.value || 'Star Child').trim();
+  // pick non-repeating
+  const eng = pickEnglishRoast().replace('{name}', name);
+  const hin = pickHindiRoast().replace('{name}', name);
+  englishText.innerHTML = ''; hindiText.innerHTML = ''; tdPrompt.textContent = ''; truthBox.style.display='none'; wheelResult.textContent='';
+  await typeText(englishText, eng);
+  showBurst(englishBurst, ['😂','✨','🔥']);
+  await new Promise(r=>setTimeout(r,320));
+  await typeText(hindiText, hin);
+  showBurst(hindiBurst, ['😏','🤣','🌟']);
+  tdPrompt.innerHTML = `Alright <b>${escapeHtml(name)}</b>, MAS and the universe challenge you: <b>Truth or Dare?</b>`;
+});
+/* Truth and dare buttons */
+truthBtn.addEventListener('click', ()=>{
+  const q = pickTruth();
+  truthBox.style.display='block';
+  truthBox.innerHTML = `<strong>Truth:</strong> ${escapeHtml(q)}`;
+});
+dareBtn.addEventListener('click', ()=>{
+  const d = pickDare();
+  truthBox.style.display='block';
+  truthBox.innerHTML = `<strong>Dare:</strong> ${escapeHtml(d)}<br><small>Dare accepted? The stars are watching 👀 – MAS</small>`;
+});
+/* ------------------- Wheel rendering & spin ------------------- */
+const size = 640;
+wheelCanvas.width = size; wheelCanvas.height = size;
+const cx = size/2, cy = size/2, outerR = size/2 - 12;
+/* draw wheel segments from current array */
+function drawWheelSegments(items, rotation=0){
+  const count = items.length || 6;
+  ctx.clearRect(0,0,size,size);
+  for(let i=0;i<count;i++){
+    const start = (i/count) * Math.PI*2 + rotation;
+    const end = ((i+1)/count) * Math.PI*2 + rotation;
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,outerR,start,end);
+    ctx.closePath();
+    const hue = Math.floor((i*360/count) % 360);
+    ctx.fillStyle = `hsl(${hue} 80% 55%)`;
+    ctx.fill();
+    // text
+    ctx.save();
+    ctx.translate(cx,cy);
+    const mid = start + (end-start)/2;
+    ctx.rotate(mid);
+    ctx.fillStyle='rgba(255,255,255,0.95)';
+    ctx.textAlign='right';
+    ctx.font = 'bold 14px Poppins, Arial';
+    wrapCanvasText(ctx, items[i], outerR - 18, -6);
+    ctx.restore();
+  }
+  // center circle
+  ctx.beginPath(); ctx.arc(cx,cy,outerR*0.28,0,Math.PI*2); ctx.fillStyle='rgba(0,0,0,0.25)'; ctx.fill();
+}
+/* wrap text for canvas along radial */
+function wrapCanvasText(ctx, text, radius, initialY){
+  const words = text.split(' ');
+  let line = '';
+  const maxWidth = 120;
+  let y = initialY;
+  for(let i=0;i<words.length;i++){
+    const test = line + words[i] + ' ';
+    const metrics = ctx.measureText(test);
+    if(metrics.width > maxWidth && line !== ''){
+      ctx.fillText(line, radius, y);
+      line = words[i] + ' ';
+      y += 16;
+    } else {
+      line = test;
+    }
+  }
+  ctx.fillText(line, radius, y);
+}
+/* initialize wheel items (copy of dares) */
+let wheelItems = dares.slice(); // will be used to render
+drawWheelSegments(wheelItems, 0);
+/* simple spin that picks a non-repeating dare and animates wheel to that segment */
+let spinning = false;
+spinBtn.addEventListener('click', ()=>{
+  if(spinning) return;
+  // pick target dare using non-repeating picker
+  const chosen = pickWheelDare();
+  // ensure chosen exists on wheelItems; if not, replace random slot with chosen
+  let targetIndex = wheelItems.indexOf(chosen);
+  if(targetIndex === -1){
+    // replace a random slot
+    const randReplace = Math.floor(Math.random() * wheelItems.length);
+    wheelItems[randReplace] = chosen;
+    targetIndex = randReplace;
+  }
+  // shuffle wheel visual order slightly for variety
+  wheelItems = shuffleArray(wheelItems.slice());
+  targetIndex = wheelItems.indexOf(chosen);
+  const segCount = wheelItems.length;
+  const segAngle = 2*Math.PI/segCount;
+  const spins = 6 + Math.floor(Math.random()*4);
+  const finalRotation = (spins * 2*Math.PI) + (targetIndex * segAngle) + segAngle/2;
+  spinning = true;
+  playSpinSound();
+  const start = performance.now();
+  const duration = 4200;
+  function animate(now){
+    const t = Math.min(1, (now - start) / duration);
+    const ease = 1 - Math.pow(1 - t, 3);
+    const rot = finalRotation * ease;
+    drawWheelSegments(wheelItems, rot);
+    if(t < 1) requestAnimationFrame(animate);
+    else {
+      spinning = false;
+      wheelResult.innerHTML = `<strong>Dare:</strong> ${escapeHtml(chosen)}<br><small>Dare accepted? The stars are watching 👀 – MAS</small>`;
+    }
+  }
+  requestAnimationFrame(animate);
+});
+/* short oscillator spin sound */
+function playSpinSound(){
+  try{
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if(!AudioCtx) return;
+    const ctxA = new AudioCtx();
+    const o = ctxA.createOscillator();
+    const g = ctxA.createGain();
+    o.type='sine';
+    o.frequency.setValueAtTime(600, ctxA.currentTime);
+    o.connect(g); g.connect(ctxA.destination);
+    g.gain.setValueAtTime(0.0001, ctxA.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.12, ctxA.currentTime + 0.02);
+    o.start();
+    g.gain.exponentialRampToValueAtTime(0.0001, ctxA.currentTime + 1.5);
+    setTimeout(()=>{ o.stop(); ctxA.close(); }, 1600);
+  }catch(e){}
+}
+/* small shuffle util */
+function shuffleArray(a){
+  const arr = a.slice();
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random() * (i+1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+/* escape HTML safety for inserted strings */
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g, function(m){
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]);
+  });
+}
+/* allow Enter to trigger reveal */
+fullName.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') revealBtn.click(); });
+/* End of script */
+</script>
+</body>
+</html>
